@@ -12,6 +12,11 @@ SET(CMAKE_FORCE_UNIX_PATHS 1)
 SET(CMAKE_C_INCLUDE_PATH
   "include"
   "/opt/ros/fuerte/include"
+  "/opt/ros/fuerte/include/opencv"
+  "/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include"
+  "/opt/ros/fuerte/stacks/image_common/image_transport/include"
+  "/opt/ros/fuerte/stacks/pluginlib/include"
+  "/opt/ros/fuerte/stacks/pluginlib"
   )
 SET(CMAKE_CXX_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})
 SET(CMAKE_Fortran_INCLUDE_PATH ${CMAKE_C_INCLUDE_PATH})

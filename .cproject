@@ -243,6 +243,11 @@
 <pathentry kind="mac" name="_GNU_SOURCE" path="" value="1"/>
 <pathentry include="/opt/kobuki/minsu/minsu_depthInfo/include" kind="inc" path="" system="true"/>
 <pathentry include="/opt/ros/fuerte/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/fuerte/include/opencv" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/fuerte/stacks/vision_opencv/cv_bridge/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/fuerte/stacks/image_common/image_transport/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/fuerte/stacks/pluginlib/include" kind="inc" path="" system="true"/>
+<pathentry include="/opt/ros/fuerte/stacks/pluginlib" kind="inc" path="" system="true"/>
 <pathentry include="/usr/lib/gcc/x86_64-linux-gnu/4.6/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/local/include" kind="inc" path="" system="true"/>
 <pathentry include="/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed" kind="inc" path="" system="true"/>
