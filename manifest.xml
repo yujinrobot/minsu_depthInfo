@@ -1,0 +1,20 @@
+<package>
+  <description brief="minsu_depthInfo">
+
+     minsu_depthInfo
+
+  </description>
+  <author>Control Team Laptop</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/minsu_depthInfo</url>
+  <depend package="roscpp"/>
+  <depend package="opencv2"/>
+  <depend package="cv_bridge"/>
+  <depend package="image_transport"/>
+
+
+
+</package>
+
+
