@@ -95,6 +95,35 @@ depend:
 	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/CMakeFiles/tracking_Redball_depthInfo.dir/rule:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tracking_Redball_depthInfo.dir/rule
+.PHONY : src/CMakeFiles/tracking_Redball_depthInfo.dir/rule
+
+# Convenience name for target.
+tracking_Redball_depthInfo: src/CMakeFiles/tracking_Redball_depthInfo.dir/rule
+.PHONY : tracking_Redball_depthInfo
+
+# fast build rule for target.
+tracking_Redball_depthInfo/fast:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/tracking_Redball_depthInfo.dir/build.make src/CMakeFiles/tracking_Redball_depthInfo.dir/build
+.PHONY : tracking_Redball_depthInfo/fast
+
+# target to build an object file
+tracking_Redball_depthInfo.o:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/tracking_Redball_depthInfo.dir/build.make src/CMakeFiles/tracking_Redball_depthInfo.dir/tracking_Redball_depthInfo.o
+.PHONY : tracking_Redball_depthInfo.o
+
+# target to preprocess a source file
+tracking_Redball_depthInfo.i:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/tracking_Redball_depthInfo.dir/build.make src/CMakeFiles/tracking_Redball_depthInfo.dir/tracking_Redball_depthInfo.i
+.PHONY : tracking_Redball_depthInfo.i
+
+# target to generate assembly for a file
+tracking_Redball_depthInfo.s:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/tracking_Redball_depthInfo.dir/build.make src/CMakeFiles/tracking_Redball_depthInfo.dir/tracking_Redball_depthInfo.s
+.PHONY : tracking_Redball_depthInfo.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -103,6 +132,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... tracking_Redball_depthInfo"
+	@echo "... tracking_Redball_depthInfo.o"
+	@echo "... tracking_Redball_depthInfo.i"
+	@echo "... tracking_Redball_depthInfo.s"
 .PHONY : help
 
 

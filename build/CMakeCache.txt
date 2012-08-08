@@ -188,6 +188,9 @@ TOOLCHAINCONFIG:FILEPATH=TOOLCHAINCONFIG-NOTFOUND
 //Path to a file.
 USERCONFIG:FILEPATH=USERCONFIG-NOTFOUND
 
+//Path to a file.
+_file_name:FILEPATH=/opt/kobuki/minsu/minsu_depthInfo/src/tracking_Redball_depthInfo.cpp
+
 //Value Computed by CMake
 minsu_depthInfo_BINARY_DIR:STATIC=/opt/kobuki/minsu/minsu_depthInfo/build
 

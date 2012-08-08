@@ -13,3 +13,4 @@
 /opt/kobuki/minsu/minsu_depthInfo/build/CMakeFiles/test-results.dir
 /opt/kobuki/minsu/minsu_depthInfo/build/CMakeFiles/test-results-run.dir
 /opt/kobuki/minsu/minsu_depthInfo/build/CMakeFiles/tests.dir
+/opt/kobuki/minsu/minsu_depthInfo/build/src/CMakeFiles/tracking_Redball_depthInfo.dir
