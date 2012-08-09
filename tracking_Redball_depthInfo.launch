@@ -3,7 +3,7 @@
 	<node pkg="minsu_depthInfo" name="depth_info" type="tracking_Redball_depthInfo" output="screen" >
 		<!--remap from="in" to="/gscam/image_raw" /--> 
 		<!--remap from="in" to="camera/depth/image" /-->
-		<param name="_image_transport" value="compressed" type="string" />
+		<!--param name="_image_transport" value="compressed" type="string" /-->
 	</node>
 
 </launch>

@@ -69,7 +69,7 @@ public:
 
 	frame = cv_ptr->image;
 
-    cv::imshow(WINDOW, cv_ptr->image);
+    //cv::imshow(WINDOW, cv_ptr->image);
     cv::waitKey(3);
 
     depth_pub_.publish(cv_ptr->toImageMsg());
