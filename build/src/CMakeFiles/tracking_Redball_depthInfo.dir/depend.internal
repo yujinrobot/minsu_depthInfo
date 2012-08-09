@@ -5,6 +5,9 @@ src/CMakeFiles/tracking_Redball_depthInfo.dir/tracking_Redball_depthInfo.o
  /opt/kobuki/minsu/minsu_depthInfo/src/tracking_Redball_depthInfo.cpp
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
+ /opt/ros/fuerte/include/geometry_msgs/Point.h
+ /opt/ros/fuerte/include/geometry_msgs/Pose.h
+ /opt/ros/fuerte/include/geometry_msgs/Quaternion.h
  /opt/ros/fuerte/include/opencv2/core/core.hpp
  /opt/ros/fuerte/include/opencv2/core/core_c.h
  /opt/ros/fuerte/include/opencv2/core/mat.hpp

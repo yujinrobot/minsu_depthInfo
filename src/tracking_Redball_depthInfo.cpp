@@ -1,9 +1,11 @@
+#include <stdio.h>
 #include <ros/ros.h>
 #include <image_transport/image_transport.h>
 #include <cv_bridge/cv_bridge.h>
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <geometry_msgs/Pose.h>
 
 namespace enc = sensor_msgs::image_encodings;
 
@@ -12,16 +14,26 @@ static const char WINDOW[] = "Image window";
 class DepthInfo
 {
   ros::NodeHandle nh_;
+  ros::Subscriber pos_sub;
+  ros::Publisher depth_pos_pub;
+
   image_transport::ImageTransport it_;
   image_transport::Subscriber depth_sub_;
   image_transport::Publisher depth_pub_;
 
 public:
+  cv::Mat frame;
+  int posX;
+  int posY;
+
   DepthInfo()
-    : it_(nh_)
+    : it_(nh_), posX(0), posY(0)
   {
     depth_pub_ = it_.advertise("out", 1);
     depth_sub_ = it_.subscribe("camera/depth/image", 1, &DepthInfo::depthInfoCb, this);
+
+    pos_sub = nh_.subscribe("ball_info_pose", 1, &DepthInfo::depthInfoPoseCb, this);
+    depth_pos_pub = nh_.advertise<geometry_msgs::Pose>("depth_info_dist", 1);
 
     cv::namedWindow(WINDOW);
   }
@@ -29,6 +41,17 @@ public:
   ~DepthInfo()
   {
     cv::destroyWindow(WINDOW);
+  }
+
+  void depthInfoPoseCb(const geometry_msgs::Pose& pos)
+  {
+	posX = pos.position.x;
+	posY = pos.position.y;
+	std::cout << "pos (" << posX << " , " << posY << ") : "<< frame.at<float>(posY, posX) << std::endl;
+
+	geometry_msgs::Pose distance;
+	distance.position.z = frame.at<float>(posY, posX);	//detection distance
+	depth_pos_pub.publish(distance);					// distance publish
   }
 
   void depthInfoCb(const sensor_msgs::ImageConstPtr& msg)
@@ -44,12 +67,18 @@ public:
       return;
     }
 
+	frame = cv_ptr->image;
+
     cv::imshow(WINDOW, cv_ptr->image);
     cv::waitKey(3);
 
     depth_pub_.publish(cv_ptr->toImageMsg());
     //std::cout << "channel : " << cv_ptr->image.channels() << std::endl;
-    //std::cout << "pixel value : " << cv_ptr->image.at<float>(240,320) << std::endl;
+	//for(int i(0); i<40; i++)
+	//{
+	//   std::cout << "pixel value" << " i : " << i+300 << " " << cv_ptr->image.at<float>(240,300+i) << std::endl;
+	//}
+	//printf("\n");
   }
 };
 
