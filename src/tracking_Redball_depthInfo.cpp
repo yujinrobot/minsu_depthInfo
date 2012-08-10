@@ -75,12 +75,7 @@ public:
     cv::waitKey(3);
 
     depth_pub_.publish(cv_ptr->toImageMsg());
-    //std::cout << "channel : " << cv_ptr->image.channels() << std::endl;
-	//for(int i(0); i<40; i++)
-	//{
-	//   std::cout << "pixel value" << " i : " << i+300 << " " << cv_ptr->image.at<float>(240,300+i) << std::endl;
-	//}
-	//printf("\n");
+
   }
 };
 
