@@ -50,6 +50,8 @@ public:
 	std::cout << "pos (" << posX << " , " << posY << ") : "<< frame.at<float>(posY, posX) << std::endl;
 
 	geometry_msgs::Pose distance;
+	distance.position.x = posX;
+	distance.position.y = posY;
 	distance.position.z = frame.at<float>(posY, posX);	//detection distance
 	depth_pos_pub.publish(distance);					// distance publish
   }
