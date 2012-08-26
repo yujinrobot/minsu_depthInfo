@@ -9,13 +9,9 @@
 
 namespace enc = sensor_msgs::image_encodings;
 
-static const char WINDOW[] = "Image window";
-
 class DepthInfo
 {
   ros::NodeHandle nh_;
-  ros::Subscriber pos_sub;
-  ros::Publisher depth_pos_pub;
 
   image_transport::ImageTransport it_;
   image_transport::Subscriber depth_sub_;
@@ -23,48 +19,19 @@ class DepthInfo
 
 public:
   cv::Mat frame;
-  int posX;
-  int posY;
+
 
   DepthInfo()
-    : it_(nh_), posX(0), posY(0)
+    : it_(nh_)
   {
     depth_pub_ = it_.advertise("out", 1);
     depth_sub_ = it_.subscribe("camera/depth/image", 1, &DepthInfo::depthInfoCb, this);
-
-    pos_sub = nh_.subscribe("ball_info_pose", 1, &DepthInfo::depthInfoPoseCb, this);
-    depth_pos_pub = nh_.advertise<geometry_msgs::Pose>("depth_info_dist", 1);
-
-    cv::namedWindow(WINDOW);
   }
 
-  ~DepthInfo()
-  {
-    cv::destroyWindow(WINDOW);
-  }
-
-  void depthInfoPoseCb(const geometry_msgs::Pose& pos)
-  {
-	posX = pos.position.x;
-	posY = pos.position.y;
-	std::cout << "pos (" << posX << " , " << posY << ") : "<< frame.at<float>(posY, posX) << std::endl;
-
-	geometry_msgs::Pose distance;
-	distance.position.x = posX;
-	distance.position.y = posY;
-	distance.position.z = frame.at<float>(posY, posX);	//detection distance
-
-	//if ( std::isnan(distance.position.z) ) {
-	//	distance.position.z = frame.at<float>(posY+1, posX+1);
-	//}
-
-	depth_pos_pub.publish(distance);					// distance publish
-  }
 
   void depthInfoCb(const sensor_msgs::ImageConstPtr& msg)
   {
     cv_bridge::CvImagePtr cv_ptr;
-
 
     try
     {
@@ -76,9 +43,7 @@ public:
       return;
     }
 
-	frame = cv_ptr->image;
-
-    //cv::imshow(WINDOW, cv_ptr->image);
+    frame = cv_ptr->image;
     cv::waitKey(3);
 
     depth_pub_.publish(cv_ptr->toImageMsg());
