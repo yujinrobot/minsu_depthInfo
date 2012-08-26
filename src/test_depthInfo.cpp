@@ -17,7 +17,8 @@ class DepthInfo
   image_transport::Publisher depth_pub_;
 
 public:
-  cv::Mat frame;
+  cv::Mat rgb_frame;
+  cv::Mat depth_frame;
 
 
   DepthInfo()
@@ -30,11 +31,13 @@ public:
 
   void depthInfoCb(const sensor_msgs::ImageConstPtr& msg)
   {
-    cv_bridge::CvImagePtr cv_ptr;
+    cv_bridge::CvImagePtr cv_ptr_rgb;
+    cv_bridge::CvImagePtr cv_ptr_depth;
 
     try
     {
-      cv_ptr = cv_bridge::toCvCopy(msg, enc::TYPE_32FC1);
+      cv_ptr_rgb = cv_bridge::toCvCopy(msg, enc::BGR8);
+      cv_ptr_depth = cv_bridge::toCvCopy(msg, enc::TYPE_32FC1);
     }
     catch (cv_bridge::Exception& e)
     {
@@ -42,11 +45,14 @@ public:
       return;
     }
 
-    frame = cv_ptr->image;
-    cv::imshow("depth_image", frame);
+    rgb_frame = cv_ptr_rgb->image;
+    depth_frame = cv_ptr_depth->image;
+
+    cv::imshow("rgb_image", rgb_frame);
+    cv::imshow("depth_image", depth_frame);
     cv::waitKey(3);
 
-    depth_pub_.publish(cv_ptr->toImageMsg());
+    depth_pub_.publish(cv_ptr_depth->toImageMsg());
 
   }
 };
