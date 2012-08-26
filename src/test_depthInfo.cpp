@@ -5,7 +5,6 @@
 #include <sensor_msgs/image_encodings.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
-#include <geometry_msgs/Pose.h>
 
 namespace enc = sensor_msgs::image_encodings;
 
@@ -44,6 +43,7 @@ public:
     }
 
     frame = cv_ptr->image;
+    cv::imshow("depth_image", frame);
     cv::waitKey(3);
 
     depth_pub_.publish(cv_ptr->toImageMsg());

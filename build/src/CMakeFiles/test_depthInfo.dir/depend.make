@@ -4,9 +4,6 @@
 src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: ../src/test_depthInfo.cpp
 src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: /opt/ros/fuerte/include/XmlRpcDecl.h
 src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: /opt/ros/fuerte/include/XmlRpcValue.h
-src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: /opt/ros/fuerte/include/geometry_msgs/Point.h
-src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: /opt/ros/fuerte/include/geometry_msgs/Pose.h
-src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: /opt/ros/fuerte/include/geometry_msgs/Quaternion.h
 src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: /opt/ros/fuerte/include/opencv2/core/core.hpp
 src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: /opt/ros/fuerte/include/opencv2/core/core_c.h
 src/CMakeFiles/test_depthInfo.dir/test_depthInfo.o: /opt/ros/fuerte/include/opencv2/core/mat.hpp
