@@ -521,11 +521,13 @@ clean: CMakeFiles/tests.dir/clean
 
 # Convenience name for "all" pass in the directory.
 src/all: src/CMakeFiles/test_depthInfo.dir/all
+src/all: src/CMakeFiles/test_get_depthInfo.dir/all
 src/all: src/CMakeFiles/tracking_Redball_depthInfo.dir/all
 .PHONY : src/all
 
 # Convenience name for "clean" pass in the directory.
 src/clean: src/CMakeFiles/test_depthInfo.dir/clean
+src/clean: src/CMakeFiles/test_get_depthInfo.dir/clean
 src/clean: src/CMakeFiles/tracking_Redball_depthInfo.dir/clean
 .PHONY : src/clean
 
@@ -569,13 +571,48 @@ clean: src/CMakeFiles/test_depthInfo.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target src/CMakeFiles/test_get_depthInfo.dir
+
+# All Build rule for target.
+src/CMakeFiles/test_get_depthInfo.dir/all: CMakeFiles/rosbuild_precompile.dir/all
+	$(MAKE) -f src/CMakeFiles/test_get_depthInfo.dir/build.make src/CMakeFiles/test_get_depthInfo.dir/depend
+	$(MAKE) -f src/CMakeFiles/test_get_depthInfo.dir/build.make src/CMakeFiles/test_get_depthInfo.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /opt/kobuki/minsu/minsu_depthInfo/build/CMakeFiles  2
+	@echo "Built target test_get_depthInfo"
+.PHONY : src/CMakeFiles/test_get_depthInfo.dir/all
+
+# Include target in all.
+all: src/CMakeFiles/test_get_depthInfo.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/test_get_depthInfo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /opt/kobuki/minsu/minsu_depthInfo/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/test_get_depthInfo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /opt/kobuki/minsu/minsu_depthInfo/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/test_get_depthInfo.dir/rule
+
+# Convenience name for target.
+test_get_depthInfo: src/CMakeFiles/test_get_depthInfo.dir/rule
+.PHONY : test_get_depthInfo
+
+# clean rule for target.
+src/CMakeFiles/test_get_depthInfo.dir/clean:
+	$(MAKE) -f src/CMakeFiles/test_get_depthInfo.dir/build.make src/CMakeFiles/test_get_depthInfo.dir/clean
+.PHONY : src/CMakeFiles/test_get_depthInfo.dir/clean
+
+# clean rule for target.
+clean: src/CMakeFiles/test_get_depthInfo.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/tracking_Redball_depthInfo.dir
 
 # All Build rule for target.
 src/CMakeFiles/tracking_Redball_depthInfo.dir/all: CMakeFiles/rosbuild_precompile.dir/all
 	$(MAKE) -f src/CMakeFiles/tracking_Redball_depthInfo.dir/build.make src/CMakeFiles/tracking_Redball_depthInfo.dir/depend
 	$(MAKE) -f src/CMakeFiles/tracking_Redball_depthInfo.dir/build.make src/CMakeFiles/tracking_Redball_depthInfo.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /opt/kobuki/minsu/minsu_depthInfo/build/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /opt/kobuki/minsu/minsu_depthInfo/build/CMakeFiles  3
 	@echo "Built target tracking_Redball_depthInfo"
 .PHONY : src/CMakeFiles/tracking_Redball_depthInfo.dir/all
 

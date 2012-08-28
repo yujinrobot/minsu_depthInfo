@@ -30,7 +30,7 @@ public:
     image_sub_ = it_.subscribe("camera/rgb/image_color", 1, &DepthInfo::imageCb, this);
   }
 
-  void imageCb(const sensor_msgs::ImageConstPtr& msg)
+  void imageCb(const sensor_msgs::ImageConstPtr & msg)
   {
     cv_bridge::CvImagePtr cv_ptr_rgb;
     try
@@ -48,7 +48,7 @@ public:
     cv::waitKey(3);
   }
 
-  void depthInfoCb(const sensor_msgs::ImageConstPtr& msg)
+  void depthInfoCb(const sensor_msgs::ImageConstPtr & msg)
   {
     cv_bridge::CvImagePtr cv_ptr_depth;
 

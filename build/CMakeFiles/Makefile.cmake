@@ -75,5 +75,6 @@ SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test-results-run.dir/DependInfo.cmake"
   "CMakeFiles/tests.dir/DependInfo.cmake"
   "src/CMakeFiles/test_depthInfo.dir/DependInfo.cmake"
+  "src/CMakeFiles/test_get_depthInfo.dir/DependInfo.cmake"
   "src/CMakeFiles/tracking_Redball_depthInfo.dir/DependInfo.cmake"
   )

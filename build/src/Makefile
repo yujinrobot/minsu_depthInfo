@@ -110,6 +110,20 @@ test_depthInfo/fast:
 .PHONY : test_depthInfo/fast
 
 # Convenience name for target.
+src/CMakeFiles/test_get_depthInfo.dir/rule:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/test_get_depthInfo.dir/rule
+.PHONY : src/CMakeFiles/test_get_depthInfo.dir/rule
+
+# Convenience name for target.
+test_get_depthInfo: src/CMakeFiles/test_get_depthInfo.dir/rule
+.PHONY : test_get_depthInfo
+
+# fast build rule for target.
+test_get_depthInfo/fast:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/test_get_depthInfo.dir/build.make src/CMakeFiles/test_get_depthInfo.dir/build
+.PHONY : test_get_depthInfo/fast
+
+# Convenience name for target.
 src/CMakeFiles/tracking_Redball_depthInfo.dir/rule:
 	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tracking_Redball_depthInfo.dir/rule
 .PHONY : src/CMakeFiles/tracking_Redball_depthInfo.dir/rule
@@ -139,6 +153,21 @@ test_depthInfo.s:
 .PHONY : test_depthInfo.s
 
 # target to build an object file
+test_get_depthInfo.o:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/test_get_depthInfo.dir/build.make src/CMakeFiles/test_get_depthInfo.dir/test_get_depthInfo.o
+.PHONY : test_get_depthInfo.o
+
+# target to preprocess a source file
+test_get_depthInfo.i:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/test_get_depthInfo.dir/build.make src/CMakeFiles/test_get_depthInfo.dir/test_get_depthInfo.i
+.PHONY : test_get_depthInfo.i
+
+# target to generate assembly for a file
+test_get_depthInfo.s:
+	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/test_get_depthInfo.dir/build.make src/CMakeFiles/test_get_depthInfo.dir/test_get_depthInfo.s
+.PHONY : test_get_depthInfo.s
+
+# target to build an object file
 tracking_Redball_depthInfo.o:
 	cd /opt/kobuki/minsu/minsu_depthInfo/build && $(MAKE) -f src/CMakeFiles/tracking_Redball_depthInfo.dir/build.make src/CMakeFiles/tracking_Redball_depthInfo.dir/tracking_Redball_depthInfo.o
 .PHONY : tracking_Redball_depthInfo.o
@@ -162,10 +191,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test_depthInfo"
+	@echo "... test_get_depthInfo"
 	@echo "... tracking_Redball_depthInfo"
 	@echo "... test_depthInfo.o"
 	@echo "... test_depthInfo.i"
 	@echo "... test_depthInfo.s"
+	@echo "... test_get_depthInfo.o"
+	@echo "... test_get_depthInfo.i"
+	@echo "... test_get_depthInfo.s"
 	@echo "... tracking_Redball_depthInfo.o"
 	@echo "... tracking_Redball_depthInfo.i"
 	@echo "... tracking_Redball_depthInfo.s"

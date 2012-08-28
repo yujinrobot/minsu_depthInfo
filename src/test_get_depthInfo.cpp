@@ -67,7 +67,6 @@ public:
 
     get_depthInfo();
 
-
     depth_pub_.publish(cv_ptr_depth->toImageMsg());
 
   }

@@ -304,6 +304,19 @@ test_depthInfo/fast:
 .PHONY : test_depthInfo/fast
 
 #=============================================================================
+# Target rules for targets named test_get_depthInfo
+
+# Build rule for target.
+test_get_depthInfo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_get_depthInfo
+.PHONY : test_get_depthInfo
+
+# fast build rule for target.
+test_get_depthInfo/fast:
+	$(MAKE) -f src/CMakeFiles/test_get_depthInfo.dir/build.make src/CMakeFiles/test_get_depthInfo.dir/build
+.PHONY : test_get_depthInfo/fast
+
+#=============================================================================
 # Target rules for targets named tracking_Redball_depthInfo
 
 # Build rule for target.
@@ -340,6 +353,7 @@ help:
 	@echo "... test-results-run"
 	@echo "... tests"
 	@echo "... test_depthInfo"
+	@echo "... test_get_depthInfo"
 	@echo "... tracking_Redball_depthInfo"
 .PHONY : help
 
