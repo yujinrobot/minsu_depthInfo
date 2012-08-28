@@ -78,9 +78,8 @@ public:
     int posY = 200;             // rows
     double depthInfo = 0;
 
-
     depthInfo = depth_frame.at<float>(posY, posX);
-    std::cout << "depthInfo [posX, posY] : " << depthInfo << std::endl;
+    std::cout << "depthInfo [" << posX << ", " << posY << "] : "  << depthInfo << std::endl;
   }
 };
 
