@@ -44,6 +44,7 @@ public:
     }
 
     rgb_frame = cv_ptr_rgb->image;
+    cv::circle(rgb_frame, cv::Point(200, 100), 5, cv::Scalar(255,0,0), 2);
     cv::imshow("rgb_image", rgb_frame);
     cv::waitKey(3);
   }
@@ -77,10 +78,9 @@ public:
     int posY = 200;             // rows
     double depthInfo = 0;
 
-    cv::circle(rgb_frame, cv::Point(posY, posX), 5, cv::Scalar(255,0,0), 2);
 
     depthInfo = depth_frame.at<float>(posY, posX);
-    std::cout << "depthInfo : " << depthInfo << std::endl;
+    std::cout << "depthInfo [posX, posY] : " << depthInfo << std::endl;
   }
 };
 
