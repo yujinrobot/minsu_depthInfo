@@ -44,7 +44,7 @@ public:
     }
 
     rgb_frame = cv_ptr_rgb->image;
-    cv::circle(rgb_frame, cv::Point(200, 100), 5, cv::Scalar(255,0,0), 2);
+    cv::circle(rgb_frame, cv::Point(100, 200), 5, cv::Scalar(255,0,0), 2);
     cv::imshow("rgb_image", rgb_frame);
     cv::waitKey(3);
   }
