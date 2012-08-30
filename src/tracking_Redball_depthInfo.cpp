@@ -9,8 +9,6 @@
 
 namespace enc = sensor_msgs::image_encodings;
 
-static const char WINDOW[] = "Image window";
-
 class DepthInfo
 {
   ros::NodeHandle nh_;
@@ -35,12 +33,6 @@ public:
     pos_sub = nh_.subscribe("ball_info_pose", 1, &DepthInfo::depthInfoPoseCb, this);
     depth_pos_pub = nh_.advertise<geometry_msgs::Pose>("depth_info_dist", 1);
 
-    cv::namedWindow(WINDOW);
-  }
-
-  ~DepthInfo()
-  {
-    cv::destroyWindow(WINDOW);
   }
 
   void depthInfoPoseCb(const geometry_msgs::Pose& pos)
@@ -75,8 +67,7 @@ public:
       ROS_ERROR("cv_bridge exception: %s", e.what());
       return;
     }
-
-	frame = cv_ptr->image;
+    frame = cv_ptr->image;
 
     //cv::imshow(WINDOW, cv_ptr->image);
     cv::waitKey(3);
